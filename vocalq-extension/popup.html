@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VocalQ Sales Assistant</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .header img {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .status {
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      background-color: #f5f5f5;
+    }
+
+    .status.active {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status.inactive {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+
+    .metrics {
+      margin-bottom: 15px;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .metric-label {
+      color: #666;
+    }
+
+    .metric-value {
+      font-weight: bold;
+    }
+
+    .feedback {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+    }
+
+    .feedback-item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .feedback-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .feedback-time {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+
+    .feedback-content {
+      font-size: 14px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background-color: #2196f3;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #1976d2;
+    }
+
+    button.secondary {
+      background-color: #757575;
+    }
+
+    button.secondary:hover {
+      background-color: #616161;
+    }
+
+    button:disabled {
+      background-color: #bdbdbd;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icon48.png" alt="VocalQ Logo">
+    <h1>VocalQ Sales Assistant</h1>
+  </div>
+
+  <div id="status" class="status inactive">
+    Not monitoring
+  </div>
+
+  <div class="metrics">
+    <div class="metric">
+      <span class="metric-label">Script Adherence</span>
+      <span id="scriptAdherence" class="metric-value">-</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Objection Handling</span>
+      <span id="objectionHandling" class="metric-value">-</span>
+    </div>
+    <div class="metric">
+      <span class="metric-label">Talking Points</span>
+      <span id="talkingPoints" class="metric-value">-</span>
+    </div>
+  </div>
+
+  <div id="feedback" class="feedback">
+    <!-- Feedback items will be inserted here -->
+  </div>
+
+  <div class="actions">
+    <button id="toggleMonitoring">Start Monitoring</button>
+    <button id="viewHistory" class="secondary">View History</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
